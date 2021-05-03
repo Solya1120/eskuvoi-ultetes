@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><ultetes.Resztvevo>
+    <Resztvevo>
+    <statusz type="STATUSZ">MENYASSZONYBARAT</statusz>
+    <szekSzam type="Integer">0</szekSzam>
+    <telefonszam type="String">06204545457</telefonszam>
+    <resztVesz type="Boolean">true</resztVesz>
+    <nev type="String">Próba Béla</nev>
+    <email type="String">probabela12@gmail.com</email>
+</Resztvevo>
+<Resztvevo>
+    <statusz type="STATUSZ">MENYASSZONYBARAT</statusz>
+    <szekSzam type="Integer">4</szekSzam>
+    <telefonszam type="String">06204545457</telefonszam>
+    <resztVesz type="Boolean">true</resztVesz>
+    <nev type="String">Próba Béla</nev>
+    <email type="String">probabela12@gmail.com</email>
+</Resztvevo>
+<Resztvevo>
+    <statusz type="STATUSZ">MENYASSZONYBARAT</statusz>
+    <szekSzam type="Integer">6</szekSzam>
+    <telefonszam type="String">06204545457</telefonszam>
+    <resztVesz type="Boolean">true</resztVesz>
+    <nev type="String">Próba Béla</nev>
+    <email type="String">probabela12@gmail.com</email>
+</Resztvevo>
+</ultetes.Resztvevo>
