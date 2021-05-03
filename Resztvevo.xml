@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><ultetes.Resztvevo>
+    <Resztvevo>
+        <statusz type="STATUSZ">MENYASSZONYBARAT</statusz>
+        <szekSzam type="Integer">4</szekSzam>
+        <telefonszam type="String">06204545457</telefonszam>
+        <resztVesz type="Boolean">true</resztVesz>
+        <nev type="String">Nagy Tibor</nev>
+        <email type="String">nagyTiti1122@gmail.com</email>
+    </Resztvevo>
+    <Resztvevo>
+        <statusz type="STATUSZ">MENYASSZONYBARAT</statusz>
+        <szekSzam type="Integer">6</szekSzam>
+        <telefonszam type="String">06204545457</telefonszam>
+        <resztVesz type="Boolean">true</resztVesz>
+        <nev type="String">Kovács Ilona</nev>
+        <email type="String">kovi@gmail.com</email>
+    </Resztvevo>
+</ultetes.Resztvevo>

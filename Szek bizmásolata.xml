@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><Szekek>
+    <Szek>
+        <foglalt típe="Boolean">true</foglalt>
+        <szekSzam típe="Integer">0</szekSzam>
+        <szekNeve típe="JLabel">balSzek0</szekNeve>
+    </Szek>
+    <Szek>
+        <foglalt típe="Boolean">false</foglalt>
+        <szekSzam típe="Integer">1</szekSzam>
+        <szekNeve típe="JLabel">balSzek1</szekNeve>
+    </Szek>
+    <Szek>
+        <foglalt típe="Boolean">false</foglalt>
+        <szekSzam típe="Integer">2</szekSzam>
+        <szekNeve típe="JLabel">balSzek2</szekNeve>
+    </Szek>
+    <Szek>
+        <foglalt típe="Boolean">false</foglalt>
+        <szekSzam típe="Integer">3</szekSzam>
+        <szekNeve típe="JLabel">balSzek3</szekNeve>
+    </Szek>
+    <Szek>
+        <foglalt típe="Boolean">false</foglalt>
+        <szekSzam típe="Integer">4</szekSzam>
+        <szekNeve típe="JLabel">balSzek4</szekNeve>
+    </Szek>
+    <Szek>
+        <foglalt típe="Boolean">false</foglalt>
+        <szekSzam típe="Integer">5</szekSzam>
+        <szekNeve típe="JLabel">jobbSzek5</szekNeve>
+    </Szek>
+    <Szek>
+        <foglalt típe="Boolean">false</foglalt>
+        <szekSzam típe="Integer">6</szekSzam>
+        <szekNeve típe="JLabel">jobbSzek6</szekNeve>
+    </Szek>
+    <Szek>
+        <foglalt típe="Boolean">true</foglalt>
+        <szekSzam típe="Integer">7</szekSzam>
+        <szekNeve típe="JLabel">jobbSzek7</szekNeve>
+    </Szek>
+    <Szek>
+        <foglalt típe="Boolean">false</foglalt>
+        <szekSzam típe="Integer">8</szekSzam>
+        <szekNeve típe="JLabel">jobbSzek8</szekNeve>
+    </Szek>
+    <Szek>
+        <foglalt típe="Boolean">true</foglalt>
+        <szekSzam típe="Integer">9</szekSzam>
+        <szekNeve típe="JLabel">jobbSzek9</szekNeve>
+    </Szek>
+</Szekek>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><ultetes.Szolgaltato>
+    <Szolgaltato>
+        <szekSzam type="Integer">2</szekSzam>
+        <telefonszam type="String">06204545457</telefonszam>
+        <resztVesz type="Boolean">true</resztVesz>
+        <nev type="String">Kecskés Zoltán</nev>
+        <email type="String">kzs12@gmail.com</email>
+        <ar type="Integer">12478</ar>
+        <szolgaltatas type="String">Vőfély</szolgaltatas>
+    </Szolgaltato>
+</ultetes.Szolgaltato>
