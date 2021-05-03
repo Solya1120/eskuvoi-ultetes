@@ -67,7 +67,8 @@ public class Form extends javax.swing.JFrame {
         this.addok();
         
         this.szekSzinezes();
-        
+        this.eddigiVendegekListFrissit();
+        this.eddigiSzolgaltatokListFrissit();
         
     }
 
@@ -93,6 +94,9 @@ public class Form extends javax.swing.JFrame {
         vendegList = new javax.swing.JComboBox<>();
         resztVeszRbtn = new javax.swing.JRadioButton();
         nemResztVeszRbtn = new javax.swing.JRadioButton();
+        modositasBtn = new javax.swing.JButton();
+        torlesBtn = new javax.swing.JButton();
+        eddigiVendegekList = new javax.swing.JComboBox<>();
         SzolgaltatoPanel = new javax.swing.JPanel();
         keszBtn1 = new javax.swing.JButton();
         nevField1 = new javax.swing.JTextField();
@@ -107,6 +111,9 @@ public class Form extends javax.swing.JFrame {
         arField1 = new javax.swing.JTextField();
         nemResztVeszRbtn1 = new javax.swing.JRadioButton();
         resztVeszRbtn1 = new javax.swing.JRadioButton();
+        torlesBtn1 = new javax.swing.JButton();
+        modositasBtn1 = new javax.swing.JButton();
+        eddigiSzolgaltatokList = new javax.swing.JComboBox<>();
         VendegVagyokBtn = new javax.swing.JButton();
         FoglalasPanel = new javax.swing.JPanel();
         asztalLbl = new javax.swing.JLabel();
@@ -202,12 +209,30 @@ public class Form extends javax.swing.JFrame {
             }
         });
 
+        modositasBtn.setText("Módosítás");
+        modositasBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                modositasBtnMouseClicked(evt);
+            }
+        });
+        modositasBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                modositasBtnActionPerformed(evt);
+            }
+        });
+
+        torlesBtn.setText("Törlés");
+        torlesBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                torlesBtnMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout VendegPanelLayout = new javax.swing.GroupLayout(VendegPanel);
         VendegPanel.setLayout(VendegPanelLayout);
         VendegPanelLayout.setHorizontalGroup(
             VendegPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(VendegPanelLayout.createSequentialGroup()
-                .addGap(0, 0, 0)
                 .addGroup(VendegPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(VendegPanelLayout.createSequentialGroup()
                         .addComponent(resztVeszRbtn)
@@ -216,7 +241,7 @@ public class Form extends javax.swing.JFrame {
                     .addGroup(VendegPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(statuszLbl)
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, VendegPanelLayout.createSequentialGroup()
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addContainerGap(98, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(vendegList, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(telefonszamLbl)
                     .addGroup(VendegPanelLayout.createSequentialGroup()
@@ -232,11 +257,19 @@ public class Form extends javax.swing.JFrame {
                         .addGap(71, 71, 71)
                         .addComponent(keszBtn)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, VendegPanelLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(eddigiVendegekList, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(77, 77, 77)
+                .addGroup(VendegPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(modositasBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(torlesBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(108, 108, 108))
         );
         VendegPanelLayout.setVerticalGroup(
             VendegPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(VendegPanelLayout.createSequentialGroup()
-                .addContainerGap(43, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(nevLbl)
                 .addGroup(VendegPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(VendegPanelLayout.createSequentialGroup()
@@ -262,7 +295,13 @@ public class Form extends javax.swing.JFrame {
                 .addGroup(VendegPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(resztVeszRbtn)
                     .addComponent(nemResztVeszRbtn))
-                .addContainerGap())
+                .addGap(18, 18, 18)
+                .addGroup(VendegPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(modositasBtn)
+                    .addComponent(eddigiVendegekList, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(torlesBtn)
+                .addGap(24, 24, 24))
         );
 
         keszBtn1.setText("Kész");
@@ -346,6 +385,25 @@ public class Form extends javax.swing.JFrame {
             }
         });
 
+        torlesBtn1.setText("Törlés");
+        torlesBtn1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                torlesBtn1MouseClicked(evt);
+            }
+        });
+
+        modositasBtn1.setText("Módosítás");
+        modositasBtn1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                modositasBtn1MouseClicked(evt);
+            }
+        });
+        modositasBtn1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                modositasBtn1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout SzolgaltatoPanelLayout = new javax.swing.GroupLayout(SzolgaltatoPanel);
         SzolgaltatoPanel.setLayout(SzolgaltatoPanelLayout);
         SzolgaltatoPanelLayout.setHorizontalGroup(
@@ -373,16 +431,24 @@ public class Form extends javax.swing.JFrame {
                                 .addComponent(keszBtn1))
                             .addComponent(arField1, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)))))
             .addGroup(SzolgaltatoPanelLayout.createSequentialGroup()
-                .addGap(205, 205, 205)
+                .addGap(25, 25, 25)
                 .addComponent(resztVeszRbtn1)
                 .addGap(50, 50, 50)
                 .addComponent(nemResztVeszRbtn1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SzolgaltatoPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(eddigiSzolgaltatokList, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(77, 77, 77)
+                .addGroup(SzolgaltatoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(modositasBtn1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(torlesBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
         SzolgaltatoPanelLayout.setVerticalGroup(
             SzolgaltatoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(SzolgaltatoPanelLayout.createSequentialGroup()
-                .addContainerGap(29, Short.MAX_VALUE)
+                .addContainerGap(21, Short.MAX_VALUE)
                 .addGroup(SzolgaltatoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SzolgaltatoPanelLayout.createSequentialGroup()
                         .addComponent(nevField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -411,7 +477,13 @@ public class Form extends javax.swing.JFrame {
                 .addGroup(SzolgaltatoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(resztVeszRbtn1)
                     .addComponent(nemResztVeszRbtn1))
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(SzolgaltatoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(modositasBtn1)
+                    .addComponent(eddigiSzolgaltatokList, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(torlesBtn1)
+                .addGap(9, 9, 9))
         );
 
         VendegVagyokBtn.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -630,12 +702,10 @@ public class Form extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(31, 31, 31)
                         .addComponent(SzolgaltatoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(AdatokPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(FoglalasPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(FoglalasPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(AdatokPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(33, 33, 33)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -650,18 +720,19 @@ public class Form extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addComponent(FoglalasPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
                         .addGap(27, 27, 27)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(SzolgaltatoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(VendegPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(FoglalasPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(VendegPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(SzolgaltatoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(9, 9, 9)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(SzolgaltatoVagyokBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(VendegVagyokBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 55, Short.MAX_VALUE))
+                        .addGap(0, 53, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(AdatokPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addContainerGap())))
@@ -697,6 +768,7 @@ public class Form extends javax.swing.JFrame {
         SzolgaltatoPanel.setVisible(Boolean.FALSE);
         this.FoglalasPanel.setVisible(Boolean.TRUE);
         this.AdatokPanel.setVisible(Boolean.TRUE);
+        eddigiVendegekListFrissit();
     }//GEN-LAST:event_VendegVagyokBtnMouseClicked
 
     private void nevField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nevField1ActionPerformed
@@ -781,8 +853,9 @@ public class Form extends javax.swing.JFrame {
             String email = this.emailField.getText();
             String telefonszam = this.telefonszamField.getText();
             Boolean resztVesz = this.resztVeszRbtn.isSelected();
-            STATUSZ statusz = STATUSZ.MENYASSZONYBARAT;
+            STATUSZ statusz = STATUSZ.VOLEGENYKOZELI;
             String statuszStr = this.vendegList.getSelectedItem().toString();
+            
             
             for(STATUSZ f : STATUSZ.values()){
                 if(f.name().equals(statuszStr)){
@@ -810,6 +883,7 @@ public class Form extends javax.swing.JFrame {
             this.VendegPanel.setVisible(Boolean.FALSE);
             
             szekSzinezes();
+            eddigiVendegekListFrissit();
             
             FoglalasPanel.setVisible(Boolean.FALSE);
             AdatokPanel.setVisible(Boolean.FALSE);
@@ -846,14 +920,18 @@ public class Form extends javax.swing.JFrame {
             this.emailField1.setText("");
             this.telefonszamField1.setText("");
             this.resztVeszRbtn1.setSelected(Boolean.TRUE);
+            this.arField1.setText("");
+            this.szolgaltatasField1.setText("");
             this.SzolgaltatoPanel.setVisible(Boolean.FALSE);
-                        
+            
             szekSzinezes();
+            eddigiSzolgaltatokListFrissit();
             
             FoglalasPanel.setVisible(Boolean.FALSE);
             AdatokPanel.setVisible(Boolean.FALSE);
             VendegVagyokBtn.setVisible(Boolean.TRUE);
             SzolgaltatoVagyokBtn.setVisible(Boolean.TRUE);
+            
         }
     }//GEN-LAST:event_keszBtn1MouseClicked
 
@@ -937,6 +1015,172 @@ public class Form extends javax.swing.JFrame {
         adatokKiirasa(9);
     }//GEN-LAST:event_jobbSzek9MouseEntered
 
+    private void modositasBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modositasBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_modositasBtnActionPerformed
+
+    private void modositasBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_modositasBtnMouseClicked
+        String aktNev = eddigiVendegekList.getSelectedItem().toString();
+        STATUSZ aktStatusz = STATUSZ.valueOf("VOLEGENYKOZELI");
+        Integer aktSzekSzam = -1;
+        String aktTelefonszam = "0";
+        Boolean aktReszVesz = false;
+        String aktEmail = "0";
+                
+        for(int i = 0; i< vendegek.size();i++){
+            if(vendegek.get(i).getNev().equals(aktNev)){
+                aktStatusz = vendegek.get(i).getStatusz();
+                aktSzekSzam = vendegek.get(i).getSzekSzam();
+                aktTelefonszam = vendegek.get(i).getTelefonszam();
+                aktReszVesz = vendegek.get(i).isResztVesz();
+                aktEmail = vendegek.get(i).getEmail();
+                break;
+            }
+        }
+        
+        nevField.setText(aktNev);
+        vendegList.setSelectedItem(aktStatusz);
+        telefonszamField.setText(aktTelefonszam);
+        resztVeszRbtn.setSelected(aktReszVesz);
+        emailField.setText(aktEmail);
+        
+        //Törlés 
+        for(int i=0; i<vendegek.size();i++){
+            if(vendegek.get(i).getNev().equals(aktNev)){
+                vendegek.remove(i);
+                break;
+            }
+        }
+        osszesVendegMentese();
+        this.vendegek = Form.loadResztvevok();
+        szekek.get(aktSzekSzam).szekFoglalasTorles();
+        osszesSzekMentese();
+        this.szekek = Form.loadSzekek();
+        szekSzinezes();
+    }//GEN-LAST:event_modositasBtnMouseClicked
+
+    private void torlesBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_torlesBtnMouseClicked
+        String nevTorles = this.eddigiVendegekList.getSelectedItem().toString();
+        Integer aktSzekSzam = -1;
+        for(int i=0; i<vendegek.size();i++){
+            if(vendegek.get(i).getNev().equals(nevTorles)){
+                aktSzekSzam = vendegek.get(i).getSzekSzam();
+                vendegek.remove(i);
+                break;
+            }
+        }
+        osszesVendegMentese();
+        this.vendegek = Form.loadResztvevok();
+        szekek.get(aktSzekSzam).szekFoglalasTorles();
+        osszesSzekMentese();
+        this.szekek = Form.loadSzekek();
+        szekSzinezes();
+        
+        eddigiVendegekListFrissit();
+        
+        JOptionPane.showMessageDialog(null, "Sikeres törlés");
+        
+        VendegVagyokBtn.setVisible(Boolean.TRUE);
+        SzolgaltatoVagyokBtn.setVisible(Boolean.TRUE);
+        VendegPanel.setVisible(Boolean.FALSE);
+        SzolgaltatoPanel.setVisible(Boolean.FALSE);
+        this.FoglalasPanel.setVisible(Boolean.FALSE);
+        this.AdatokPanel.setVisible(Boolean.FALSE);
+        
+    }//GEN-LAST:event_torlesBtnMouseClicked
+
+    private void torlesBtn1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_torlesBtn1MouseClicked
+        String nevTorles = this.eddigiSzolgaltatokList.getSelectedItem().toString();
+        Integer aktSzekSzam = -1;
+        for(int i=0; i<szolgaltatok.size();i++){
+            if(szolgaltatok.get(i).getNev().equals(nevTorles)){
+                aktSzekSzam = szolgaltatok.get(i).getSzekSzam();
+                szolgaltatok.remove(i);
+                break;
+            }
+        }
+        osszesSzolgaltatoMentese();
+        this.szolgaltatok = Form.loadSzolgaltatok();
+        szekek.get(aktSzekSzam).szekFoglalasTorles();
+        osszesSzekMentese();
+        this.szekek = Form.loadSzekek();
+        szekSzinezes();
+        
+        eddigiSzolgaltatokListFrissit();
+        
+        JOptionPane.showMessageDialog(null, "Sikeres törlés");
+        
+        VendegVagyokBtn.setVisible(Boolean.TRUE);
+        SzolgaltatoVagyokBtn.setVisible(Boolean.TRUE);
+        VendegPanel.setVisible(Boolean.FALSE);
+        SzolgaltatoPanel.setVisible(Boolean.FALSE);
+        this.FoglalasPanel.setVisible(Boolean.FALSE);
+        this.AdatokPanel.setVisible(Boolean.FALSE);
+        
+    }//GEN-LAST:event_torlesBtn1MouseClicked
+
+    private void modositasBtn1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_modositasBtn1MouseClicked
+        String aktNev = eddigiSzolgaltatokList.getSelectedItem().toString();
+        Integer aktAr = 0;
+        String aktSzolgaltatas = "";
+        Integer aktSzekSzam = -1;
+        String aktTelefonszam = "0";
+        Boolean aktReszVesz = false;
+        String aktEmail = "0";
+                
+        for(int i = 0; i< szolgaltatok.size();i++){
+            if(szolgaltatok.get(i).getNev().equals(aktNev)){
+                aktAr = szolgaltatok.get(i).getAr();
+                aktSzolgaltatas = szolgaltatok.get(i).getSzolgaltatas();
+                aktSzekSzam = szolgaltatok.get(i).getSzekSzam();
+                aktTelefonszam = szolgaltatok.get(i).getTelefonszam();
+                aktReszVesz = szolgaltatok.get(i).isResztVesz();
+                aktEmail = szolgaltatok.get(i).getEmail();
+                break;
+            }
+        }
+        
+        arField1.setText(Integer.toString(aktAr));
+        szolgaltatasField1.setText(aktSzolgaltatas);
+        nevField1.setText(aktNev);
+        telefonszamField1.setText(aktTelefonszam);
+        resztVeszRbtn1.setSelected(aktReszVesz);
+        emailField1.setText(aktEmail);
+        
+        //Törlés 
+        for(int i=0; i<szolgaltatok.size();i++){
+            if(szolgaltatok.get(i).getNev().equals(aktNev)){
+                szolgaltatok.remove(i);
+                break;
+            }
+        }
+        osszesSzolgaltatoMentese();
+        this.szolgaltatok = Form.loadSzolgaltatok();
+        szekek.get(aktSzekSzam).szekFoglalasTorles();
+        osszesSzekMentese();
+        this.szekek = Form.loadSzekek();
+        szekSzinezes();
+    }//GEN-LAST:event_modositasBtn1MouseClicked
+
+    private void modositasBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modositasBtn1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_modositasBtn1ActionPerformed
+    private void eddigiVendegekListFrissit(){
+        this.eddigiVendegekList.removeAllItems();
+        for(int i = 0; i<vendegek.size(); i++){
+            String nev = vendegek.get(i).getNev();
+            this.eddigiVendegekList.addItem(nev);
+        }
+    }
+    
+    private void eddigiSzolgaltatokListFrissit(){
+        this.eddigiSzolgaltatokList.removeAllItems();
+        for(int i = 0; i<szolgaltatok.size(); i++){
+            String nev = szolgaltatok.get(i).getNev();
+            this.eddigiSzolgaltatokList.addItem(nev);
+        }
+    }
+    
     private void adatokKiirasa(Integer lblSzam){
         if(szekek.get(lblSzam).isFoglalt()){
             for(int i = 0; i < vendegek.size(); i++){
@@ -1147,6 +1391,33 @@ public class Form extends javax.swing.JFrame {
            
         }
     }
+    private void osszesVendegMentese(){
+        osszesMentes("Resztvevo.xml");
+        for(int i = 0; i< vendegek.size();i++){
+           try{
+            Funkciok<Resztvevo> r2 = new Funkciok<>();
+            r2.mentes(vendegek.get(i));
+           } 
+           catch(Exception ex){
+            JOptionPane.showMessageDialog(null, "Hiba történt a mentés során: " + ex.toString());
+           }
+           
+        }
+    }
+    
+    private void osszesSzolgaltatoMentese(){
+        osszesMentes("Szolgaltato.xml");
+        for(int i = 0; i< szolgaltatok.size();i++){
+           try{
+            Funkciok<Szolgaltato> sz2 = new Funkciok<>();
+            sz2.mentes(szolgaltatok.get(i));
+           } 
+           catch(Exception ex){
+            JOptionPane.showMessageDialog(null, "Hiba történt a mentés során: " + ex.toString());
+           }
+           
+        }
+    }
     public static void osszesMentes(String filename){
         try{
             String filename1 = filename;
@@ -1226,6 +1497,8 @@ public class Form extends javax.swing.JFrame {
     private javax.swing.JLabel balSzek2;
     private javax.swing.JLabel balSzek3;
     private javax.swing.JLabel balSzek4;
+    private javax.swing.JComboBox<String> eddigiSzolgaltatokList;
+    private javax.swing.JComboBox<String> eddigiVendegekList;
     private javax.swing.JTextField emailField;
     private javax.swing.JTextField emailField1;
     private javax.swing.JLabel emailLbl;
@@ -1237,6 +1510,8 @@ public class Form extends javax.swing.JFrame {
     private javax.swing.JLabel jobbSzek9;
     private javax.swing.JButton keszBtn;
     private javax.swing.JButton keszBtn1;
+    private javax.swing.JButton modositasBtn;
+    private javax.swing.JButton modositasBtn1;
     private javax.swing.JRadioButton nemResztVeszRbtn;
     private javax.swing.JRadioButton nemResztVeszRbtn1;
     private javax.swing.JTextField nevField;
@@ -1253,6 +1528,8 @@ public class Form extends javax.swing.JFrame {
     private javax.swing.JTextField telefonszamField1;
     private javax.swing.JLabel telefonszamLbl;
     private javax.swing.JLabel telefonszamLbl1;
+    private javax.swing.JButton torlesBtn;
+    private javax.swing.JButton torlesBtn1;
     private javax.swing.JComboBox<String> vendegList;
     private javax.swing.JLabel árLbl1;
     // End of variables declaration//GEN-END:variables

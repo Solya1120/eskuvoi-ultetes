@@ -41,7 +41,9 @@ public class Szek {
     public void szekFoglalas(){
         this.foglalt = Boolean.TRUE;
     }
-    
+    public void szekFoglalasTorles(){
+        this.foglalt = Boolean.FALSE;
+    }
     public void setSzekSzam(Integer szekSzam){
         this.szekSzam = szekSzam;
     }
