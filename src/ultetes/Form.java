@@ -156,8 +156,6 @@ public class Form extends javax.swing.JFrame {
         });
 
         nevField.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        nevField.setForeground(new java.awt.Color(204, 204, 204));
-        nevField.setText("Próba Béla");
         nevField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nevFieldActionPerformed(evt);
@@ -165,8 +163,6 @@ public class Form extends javax.swing.JFrame {
         });
 
         emailField.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        emailField.setForeground(new java.awt.Color(204, 204, 204));
-        emailField.setText("probabela12@gmail.com");
         emailField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 emailFieldActionPerformed(evt);
@@ -174,8 +170,6 @@ public class Form extends javax.swing.JFrame {
         });
 
         telefonszamField.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        telefonszamField.setForeground(new java.awt.Color(204, 204, 204));
-        telefonszamField.setText("06204545457");
         telefonszamField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 telefonszamFieldActionPerformed(evt);
@@ -312,8 +306,6 @@ public class Form extends javax.swing.JFrame {
         });
 
         nevField1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        nevField1.setForeground(new java.awt.Color(204, 204, 204));
-        nevField1.setText("Próba Béla");
         nevField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nevField1ActionPerformed(evt);
@@ -321,8 +313,6 @@ public class Form extends javax.swing.JFrame {
         });
 
         emailField1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        emailField1.setForeground(new java.awt.Color(204, 204, 204));
-        emailField1.setText("probabela12@gmail.com");
         emailField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 emailField1ActionPerformed(evt);
@@ -330,8 +320,6 @@ public class Form extends javax.swing.JFrame {
         });
 
         telefonszamField1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        telefonszamField1.setForeground(new java.awt.Color(204, 204, 204));
-        telefonszamField1.setText("06204545457");
         telefonszamField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 telefonszamField1ActionPerformed(evt);
@@ -347,8 +335,6 @@ public class Form extends javax.swing.JFrame {
         árLbl1.setText("Ár:");
 
         szolgaltatasField1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        szolgaltatasField1.setForeground(new java.awt.Color(204, 204, 204));
-        szolgaltatasField1.setText("fotós");
         szolgaltatasField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 szolgaltatasField1ActionPerformed(evt);
@@ -358,8 +344,6 @@ public class Form extends javax.swing.JFrame {
         szolgaltatasLbl1.setText("Szolgáltatás megnevezése:");
 
         arField1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        arField1.setForeground(new java.awt.Color(204, 204, 204));
-        arField1.setText("120000");
         arField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 arField1ActionPerformed(evt);
@@ -719,8 +703,7 @@ public class Form extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(FoglalasPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(FoglalasPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(27, 27, 27)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -846,8 +829,8 @@ public class Form extends javax.swing.JFrame {
 
     private void keszBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_keszBtnMouseClicked
         String nev= this.nevField.getText();
-        if(nev.length() < 1){
-            JOptionPane.showMessageDialog(rootPane, "Kérem, írja be a nevét!");
+        if(nev.length() < 1 ||  szekSzam < 0){
+            JOptionPane.showMessageDialog(rootPane, "Hibás kitöltés, a név mező kitöltése és szék foglalás kötelező!");
         }
         else{
             String email = this.emailField.getText();
